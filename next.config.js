@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    serverActions: true,
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // Apply these headers to all routes.
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: `default-src 'self';`,
+          },
+        ],
+      },
+    ];
   },
-}
-
-module.exports = nextConfig
+};

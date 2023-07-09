@@ -34,6 +34,7 @@ export default function Login() {
 
   return (
     <div className="flex-1 flex flex-col w-full max-w-sm justify-center gap-2">
+
       {view === 'check-email' ? (
         <p className="text-center text-neutral-400">
           Check <span className="font-bold text-white">{email}</span> to
